@@ -1,0 +1,15 @@
+<h1>Add an ingredient</h1>
+
+
+<form id="form_id" action="/ingredient/new" method="post">
+  <input type="text" name="ingredient" placeholder="ingredient name">
+  <button name="submit">Submit</button>
+
+</form>
+<ul>
+  <% @ingredient.each do |ingredient|%>
+  <li><a href="/ingredient/<%= ingredient.id %>"><%= ingredient.ingredient %></a></li>
+
+  <%end%>
+
+</ul>

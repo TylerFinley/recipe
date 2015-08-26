@@ -3,6 +3,5 @@ class Recipe < ActiveRecord::Base
   validates(:recipe, {presence: true})
 
 private
-  #private methods here..
 
 end

@@ -1,0 +1,29 @@
+
+<h1>Here is your recipe for <%= @recipe.recipe %></h1>
+
+<!-- Delete recipe block -->
+<form id="form_id" action="/recipe/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button name="delete">Delete</button>
+</form>
+
+<!-- Edit recipe block -->
+<form id="form_id" action="/recipe/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="new_recipe" placeholder=" New recipe name">
+  <button name="submit">Submit</button>
+
+</form>
+
+<!-- Add ingredient to recipe block.. -->
+<form action="/recipe/<%= @recipe.id %>/ingredient/new" method="post">
+  <input type="text" name="ingredient" placeholder="Add ingredient">
+  <br>
+  <button name="submit">add ingredient</button>
+</form>
+
+<ul>
+  <% @recipe.ingredients.each do |i| %>
+  <li><%= i.ingredient %></li>
+  <% end %>
+</ul>
