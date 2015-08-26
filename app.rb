@@ -86,3 +86,12 @@ post '/recipe/:rid/ingredient/new' do
   recipe.ingredients.push(new_ingredient) # push the new_ingredient OBJECT into the found recipie from line 63 with the method -> recipe.ingredients...
   redirect "/recipe/#{rid}"
 end
+
+#####INSTRUCTIONS//
+
+
+
+get '/recipe/:rid/instructions' do
+  @recipe = Recipe.find(params['rid'])
+  erb :instruction_form
+end

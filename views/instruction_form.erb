@@ -1,0 +1,13 @@
+<p>Instruction form for <%= @recipe.recipe %> </p>
+<h3>Here is where you can customize your recipie. We have a bank of </h3>
+
+
+
+<form action="">
+  <% @recipe.ingredients.each do |l| %>
+  <input type="checkbox" name="vehicle" value="Bike"><%= l.ingredient %><br>
+  <% end %>
+</form>
+
+</body>
+</html>

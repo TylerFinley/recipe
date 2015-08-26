@@ -7,7 +7,7 @@
   <button name="delete">Delete</button>
 </form>
 
-<!-- Edit recipe block -->
+<!-- Edit recipe name block -->
 <form id="form_id" action="/recipe/<%= @recipe.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <input type="text" name="new_recipe" placeholder=" New recipe name">
@@ -15,7 +15,7 @@
 
 </form>
 
-<!-- Add ingredient to recipe block.. -->
+<!-- Add ingredient to recipe block. this is going to have to be moved to the instructions page... -->
 <form action="/recipe/<%= @recipe.id %>/ingredient/new" method="post">
   <input type="text" name="ingredient" placeholder="Add ingredient">
   <br>
@@ -27,3 +27,9 @@
   <li><%= i.ingredient %></li>
   <% end %>
 </ul>
+
+<!-- Add instructions block -->
+
+<h3>click link to be taken to the instructions page</h3>
+
+<a href="/recipe/<%= @recipe.id %>/instructions">instruction page</a>
