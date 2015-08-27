@@ -3,18 +3,16 @@ require 'ingredient'
 
 describe(Recipe) do
   it('return the name of the recipe') do
-    recipe = Recipe.create({recipe: 'carrot recipe'})
+    recipe = Recipe.create({recipe: 'carrot recipe', instruction: nil})
     expect(recipe.recipe).to(eq('carrot recipe'))
   end
 end
 
 describe("associationtest") do
   it('tests an association') do
-    test_recipe = Recipe.create({recipe: 'test_rec'})
-    test_ingredient = Ingredient.create([ ingredient: 'apple', id: test_recipe.id ])
-    binding.pry
+    test_recipe = Recipe.create({recipe: 'test_rec', instruction: 'bake bread'})
+    test_ingredient = Ingredient.create({ ingredient: 'apple', id: test_recipe.id})
     test_recipe.ingredients.push(test_ingredient)
-
     expect(test_recipe.ingredients).to eq test_ingredient
   end
 end

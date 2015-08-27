@@ -38,4 +38,23 @@
   <% end %>
 </ul>
 
-<!-- Add instructions block -->
+<!-- INSTRUCTIONS -->
+
+<form id="something_diff" action="/recipe/<%= @recipe.id %>" name="instruction" method="post">
+<label for="instructions">Add instruction here:</label>
+<input type="text" name="instruction" placeholder = 'Instructions..'>
+<button name="submit">Add instructions!</button>
+</form>
+<!-- end instructions block -->
+
+<!-- test -->
+
+<h2>here are the instructions..</h2>
+
+<p>
+  <%= @recipe.id.each do |i| %>
+    <%  i.instructions %>
+  <% end %>
+</p>
+
+<!-- test -->

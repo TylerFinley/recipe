@@ -96,13 +96,23 @@ post '/recipe/:rid/ingredient/new' do
   rid = params.fetch('rid')
   fetched_ingredient = Ingredient.find(params['ingredient'].to_i)
   recipe = Recipe.find(rid)
+
   # new_ingredient = Ingredient.new(ingredient: fetched_ingredient)
   # new_ingredient.save
-binding.pry
+
   recipe.ingredients.push(fetched_ingredient)
   redirect "/recipe/#{rid}"
 end
 
+
+post "/recipe/:rid" do
+  rid = params.fetch('rid')
+  instruct = params.fetch('instruction')
+  the_recipe = Recipe.find(params['rid'].to_i)
+  the_recipe.update(instruction: instruct )
+
+   redirect "/recipe/#{rid}"
+end
 
 
 
