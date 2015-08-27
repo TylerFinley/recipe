@@ -12,7 +12,9 @@ describe("associationtest") do
   it('tests an association') do
     test_recipe = Recipe.create({recipe: 'test_rec'})
     test_ingredient = Ingredient.create([ ingredient: 'apple', id: test_recipe.id ])
+    binding.pry
     test_recipe.ingredients.push(test_ingredient)
+
     expect(test_recipe.ingredients).to eq test_ingredient
   end
 end

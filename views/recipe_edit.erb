@@ -15,10 +15,20 @@
 
 </form>
 
-<!-- Add ingredient to recipe block. this is going to have to be moved to the instructions page... -->
+<!-- Add ingredient to recipe block from what is available in the pantry -->
+
+
+
+
+
+
+
 <form action="/recipe/<%= @recipe.id %>/ingredient/new" method="post">
-  <input type="text" name="ingredient" placeholder="Add ingredient">
-  <br>
+  <select id="ingredient" name="ingredient" type="text">      <!-- from line 97 in app.rb. params fetches from name="ingredients"-->
+  <% @ingredients.each do |i| %>
+    <option value="<%= i.id %>"><%= i.ingredient %></option>
+  <% end %>
+  </select>
   <button name="submit">add ingredient</button>
 </form>
 
@@ -29,7 +39,3 @@
 </ul>
 
 <!-- Add instructions block -->
-
-<h3>click link to be taken to the instructions page</h3>
-
-<a href="/recipe/<%= @recipe.id %>/instructions">instruction page</a>
